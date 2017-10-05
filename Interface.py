@@ -86,7 +86,7 @@ class Interface:
 		print('EndTable')
 		print('Tape')
 		print('\tWrite here the tape\n')
-		print('See an examples in /configurations\n')
+		print('See some examples in /configurations\n')
 		
 		while True:
 			
