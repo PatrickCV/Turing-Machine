@@ -70,6 +70,11 @@ class Data:
 			line = confFile.readline().strip()
 			finalStates = line.split(',')
 			finalStates = [elem.strip() for elem in finalStates]
+			
+			if finalStates[0] == '-': # There's no final states specified.
+				
+				finalStates = []
+			
 			turingMachine.finalStates = finalStates # Set final states.
 			print(finalStates)
 			
@@ -108,5 +113,4 @@ class Data:
 			return False # Something wrong happened.
 		
 		return True # Nothing wrong happened.
-	
-# /home/patrick/Python/TuringMachine/configurations/conf.txt
+	# /home/patrick/Python/TuringMachine/configurations/conf2.txt

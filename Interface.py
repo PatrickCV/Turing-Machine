@@ -68,25 +68,25 @@ class Interface:
 	def configureMachine(self):
 		''' Set the configurations of the Turing Machine. '''
 		
-		print('Note:')
-		print('Follow this structure in the file:\n')
+		print('Note: Follow this structure in the configuration file(txt):\n')
 		print('Comments')
-		print('-Write some comments.-')
+		print('\tWrite some comments.')
 		print('EndComments')
 		print('States')
-		print('-Write the states\' names, separated by coma.-')
+		print('\tWrite the states\' names, separated by coma.')
 		print('Start State')
-		print('-Write the start state name.-')
+		print('\tWrite the start state name.')
 		print('Final States')
-		print('-Write the final states\' names, separated by coma.-')
+		print('\tWrite the final states\' names, separated by coma.')
+		print('\tIf you don\'t want to specify final states put \'-\'.')
 		print('Table')
-		print('-Specify the instructions, one for line.-')
-		print('-Order of the instruction\'s parts:-')
-		print('-actualState, readSymbol, nextState, direction, newSymbol-')
+		print('\tSpecify the instructions, one for line.')
+		print('\tOrder of the instruction\'s parts:')
+		print('\tactualState, readSymbol, nextState, direction, newSymbol')
 		print('EndTable')
 		print('Tape')
-		print('-Write here the tape-\n')
-		print('See an example in /configurations/conf.txt\n')
+		print('\tWrite here the tape\n')
+		print('See an examples in /configurations\n')
 		
 		while True:
 			
@@ -136,57 +136,29 @@ class Interface:
 				print('Crashed!')
 				
 				break
-			
-			if self.turingMachine.isFinished:
+			 
+			elif self.turingMachine.isFinished:
 				
 				print('Finished!')
 				
 				break
 			
 			print()
-			input('<Enter> to the next step.')
+			print()
+			print('<Enter> to the next step.')
+			print('<Tap> then <Enter> to halt and show the tape.')
+			option = input()
+			
+			if option == '\t':
+				
+				break
 			
 			# Do the next step.
 			self.turingMachine.step()
 			
 			self.clear()
 		
-		
-		
-		
-		
-		## Cycle of steps
-		#while True:
-			
-			#if self.turingMachine.isCrashed:
-				
-				#print('Crashed!')
-				
-				#break
-			
-			#if self.turingMachine.isFinished:
-				
-				#print('Finished!')
-				
-				#break
-			
-			## Capture the actual state.
-			#stateRegister = self.turingMachine.stateRegister
-			#actualState = stateRegister.name
-			
-			#print('Actual State:', actualState)
-			#print()
-			
-			## Show the head.
-			#print((' ' * 9), 'V')
-			
-			## Show the nearest head symbols.
-			#self.showNearestSymbols()
-			
-			#print()
-			#input('<Enter> to the next step.')
-			
-			## Do the next step.
-			#self.turingMachine.step()
-			
-			#self.clear()
+		print()
+		print()
+		print('Tape:')
+		print(''.join(self.turingMachine.tape.getAll()))

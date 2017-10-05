@@ -51,7 +51,8 @@ class TuringMachine:
 		# There's not an instruction for the read symbol (crash).
 		if instruction == None:
 			
-			self.crashed = True
+			#print('Paso')
+			self.isCrashed = True
 			
 			return
 		

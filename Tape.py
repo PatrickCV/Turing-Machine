@@ -46,4 +46,3 @@ class Tape:
 		''' Return the lenght of self.symbols. '''
 		
 		return len(self.symbols)
-	

@@ -1,6 +1,7 @@
 
 # This is an elemental part of a Turing Machine.
 # It can read and write symbols on the tape.
+# Also can move and stop the tape.
 
 from Tape import Tape
 
@@ -54,7 +55,7 @@ class Head:
 		''' Move the head to right. '''
 		
 		# In the -10 position.
-		if self.position == (tape.get(len(tape) -10)):
+		if self.position == (len(tape) -10):
 			
 			# Create a new blank symbol at the head of the tape.
 			tape.addTail('B')

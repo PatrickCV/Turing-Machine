@@ -1,0 +1,17 @@
+Comments
+An simple example of a Turing Machine.
+Converts 01010100 to 10101011.
+EndComments
+States
+q0, q1
+Start State
+q0
+Final States
+-
+Table
+q0, 0, q0, >, 1
+q0, 1, q0, >, 0
+q0, B, q0, >, B
+EndTable
+Tape
+100010100010
